@@ -1,3 +1,11 @@
 body{
     font-family: 'VT323', monospace;
+
+}
+html{
+    background-color:#FEF9FF;
+}
+
+::placeholder{
+    color:black;
 }
