@@ -28,11 +28,22 @@ $(searchBtnEl).click(function () {
         songDiv.append(pTwo);
 
         var track = response.track[0].strTrack;
-        var pThree = $("<button>").text("Click Here For Lyrics");
+        var pThree = $("<button/>", {
+            text: "Click Here For Lyrics",
+            id: "searchLyric"
+        })
         songDiv.append(pThree);
-
-
+        
 
         $("#artistResults").prepend(songDiv)
     })
 })
+
+// $(searchBtnEl).click(function () {
+//     var inputVal = $("#inputInfo").val();
+//     var inputVal1 = $("#inputInfo1").val();
+//     event.preventDefault();
+//     $.ajax({
+//         url: "https://www.theaudiodb.com/api/v1/json/1/searchtrack.php?s=" + inputVal + "&t=" + inputVal1,
+//         method: "GET"
+//     }).then(function (response) {
