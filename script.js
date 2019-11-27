@@ -20,20 +20,27 @@ $(searchBtnEl).click(function () {
         var songDiv = $("<div class='artist'>");
 
         var artist = response.track[0].strArtist;
-        var pOne = $("<p>").text(artist);
+        var pOne = $("<p>").text("Artist: " + artist);
         songDiv.append(pOne);
 
         var album = response.track[0].strAlbum;
-        var pTwo = $("<p>").text(album);
+        var pTwo = $("<p>").text("Album: " + album);
         songDiv.append(pTwo);
 
         var track = response.track[0].strTrack;
-        var pThree = $("<button/>", {
+        var pThree = $("<p>").text("Song Title: " + track);
+        songDiv.append(pThree);
+        
+        
+        var track = response.track[0].strTrack;
+        var pFour = $("<button/>", {
             text: "Click Here For Lyrics",
             id: "searchLyric"
         })
-        songDiv.append(pThree);
-        
+    
+        songDiv.append(pFour);
+
+
 
         $("#artistResults").prepend(songDiv)
     })
