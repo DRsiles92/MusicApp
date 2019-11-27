@@ -16,3 +16,19 @@ $(searchBtnEl).click(function () {
         console.log(response);
     })
 })
+
+
+$(searchBtnEl).click(function () {
+    var inputVal = $("#inputInfo").val();
+    var addDiv = $("<div>", {
+        'class': "searchObject"
+    });
+    $.ajax({
+        url: "api.genius.com/" + inputVal,
+        method: "GET"
+    }).then(function (response) {
+        $(addDiv).appendTo(".results");
+        $(".searchObject").text(response);
+        console.log(response);
+    })
+})
