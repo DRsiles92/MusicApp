@@ -28,7 +28,7 @@ $(searchBtnEl).click(function () {
         songDiv.append(pTwo);
 
         var track = response.track[0].strTrack;
-        var pThree = $("<button>").text(track);
+        var pThree = $("<button>").text("Click Here For Lyrics");
         songDiv.append(pThree);
 
 
