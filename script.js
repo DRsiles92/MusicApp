@@ -1,5 +1,4 @@
 var searchBtnEl = $("#searchBtn");
-var searchBtn1El = $("#searchBtn1");
 
 
 
@@ -33,13 +32,34 @@ $(searchBtnEl).click(function () {
         songDiv.append(pThree);
 
 
-        // var track = response.track[0].strTrack;
-        // var pFour = $("<button/>", {
-        //     text: "Click Here For Lyrics",
-        //     id: "searchLyric"
-        // })
+        var pFour = $("<button/>", {
+            text: "Click for Bio",
+            id: "readBio"
+            
+        })
+        var bioBtnEl = $(pFour);
 
-        // songDiv.append(pFour);
+        $(bioBtnEl).click(function () {
+            var inputVal = $("#inputInfo").val();
+            event.preventDefault();
+            $.ajax({
+                url: "https://www.theaudiodb.com/api/v1/json/1/search.php?s=" + inputVal,
+                method: "GET"
+            }).then(function (response) {
+                console.log(response);
+
+                var infoDiv = $("<div class='artistInfo'>");
+
+                var artInfo = response.artists[0].strBiographyEN;
+                var pFive = $("<p>").text("Biography: " + artInfo);
+                infoDiv.append(pFive);
+
+                $("#artist-info").prepend(infoDiv)
+
+            })
+        })
+
+        songDiv.append(pFour);
 
 
 
@@ -61,10 +81,11 @@ $(searchBtnEl).click(function () {
         var lyricDiv = $("<div class='lyrics'>");
 
         var lyrics = response.lyrics;
-        var pOne = $("<p>").text("Lyrics " + lyrics);
+        var pOne = $("<p>").text(lyrics);
         lyricDiv.append(pOne);
 
         $("#lyricResults").prepend(lyricDiv)
 
     })
-})
+});
+
