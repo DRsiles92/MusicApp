@@ -54,7 +54,8 @@ $(searchBtnEl).click(function () {
                 var pFive = $("<p>").text("Biography: " + artInfo);
                 infoDiv.append(pFive);
 
-                $("#artist-info").prepend(infoDiv)
+                $("#artist-info").prepend(infoDiv);
+                return;
 
             })
         })
@@ -88,4 +89,26 @@ $(searchBtnEl).click(function () {
 
     })
 });
+
+$(searchBtnEl).click(function () {
+    var inputVal = $("#inputInfo").val();
+    event.preventDefault();
+    $.ajax({
+        url: "https://www.theaudiodb.com/api/v1/json/1/search.php?s=" + inputVal,
+        method: "GET"
+    }).then(function (response) {
+        console.log(response);
+
+        // var infoDiv = $("<div class='artistInfo'>");
+
+        // var artInfo = response.artists[0].strBiographyEN;
+        // var pFive = $("<p>").text("Biography: " + artInfo);
+        // infoDiv.append(pFive);
+
+        $("#artist-info").prepend(infoDiv);
+        return;
+
+    })
+})
+
 
