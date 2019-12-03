@@ -1,5 +1,4 @@
 var searchBtnEl = $("#searchBtn");
-var searchBtn1El = $("#searchBtn1");
 
 
 
@@ -61,10 +60,31 @@ $(searchBtnEl).click(function () {
         var lyricDiv = $("<div class='lyrics'>");
 
         var lyrics = response.lyrics;
-        var pOne = $("<p>").text("Lyrics " + lyrics);
+        var pOne = $("<p>").text(lyrics);
         lyricDiv.append(pOne);
 
         $("#lyricResults").prepend(lyricDiv)
+
+    })
+});
+
+$(searchBtnEl).click(function () {
+    var inputVal = $("#inputInfo").val();
+    // var inputVal1 = $("#inputInfo1").val();
+    event.preventDefault();
+    $.ajax({
+        url: "https://www.theaudiodb.com/api/v1/json/1/search.php?s=" + inputVal,
+        method: "GET"
+    }).then(function (response) {
+        console.log(response);
+
+        var infoDiv = $("<div class='artistInfo'>");
+
+        var artInfo = response.artists[0].strBiographyEN;
+        var pOne = $("<p>").text("Biography: " + artInfo);
+        infoDiv.append(pOne);
+
+        $("#artist-info").prepend(infoDiv)
 
     })
 })
