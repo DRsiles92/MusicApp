@@ -1,4 +1,5 @@
 var searchBtnEl = $("#searchBtn");
+var searchBtn1El = $("#searchBtn1");
 
 
 
@@ -14,7 +15,7 @@ $(searchBtnEl).click(function () {
         console.log(response.track[0].strArtist);
         console.log(response.track[0].strAlbum);
         console.log(response.track[0].strTrack);
-        
+
 
 
         var songDiv = $("<div class='artist'>");
@@ -30,27 +31,40 @@ $(searchBtnEl).click(function () {
         var track = response.track[0].strTrack;
         var pThree = $("<p>").text("Song Title: " + track);
         songDiv.append(pThree);
-        
-        
-        var track = response.track[0].strTrack;
-        var pFour = $("<button/>", {
-            text: "Click Here For Lyrics",
-            id: "searchLyric"
-        })
-    
-        songDiv.append(pFour);
+
+
+        // var track = response.track[0].strTrack;
+        // var pFour = $("<button/>", {
+        //     text: "Click Here For Lyrics",
+        //     id: "searchLyric"
+        // })
+
+        // songDiv.append(pFour);
 
 
 
         $("#artistResults").prepend(songDiv)
     })
-})
+});
 
-// $(searchBtnEl).click(function () {
-//     var inputVal = $("#inputInfo").val();
-//     var inputVal1 = $("#inputInfo1").val();
-//     event.preventDefault();
-//     $.ajax({
-//         url: "https://www.theaudiodb.com/api/v1/json/1/searchtrack.php?s=" + inputVal + "&t=" + inputVal1,
-//         method: "GET"
-//     }).then(function (response) {
+
+$(searchBtnEl).click(function () {
+    var inputVal = $("#inputInfo").val();
+    var inputVal1 = $("#inputInfo1").val();
+    event.preventDefault();
+    $.ajax({
+        url: "https://api.lyrics.ovh/v1/" + inputVal + "/" + inputVal1,
+        method: "GET"
+    }).then(function (response) {
+        console.log(response);
+
+        var lyricDiv = $("<div class='lyrics'>");
+
+        var lyrics = response.lyrics;
+        var pOne = $("<p>").text("Lyrics " + lyrics);
+        lyricDiv.append(pOne);
+
+        $("#lyricResults").prepend(lyricDiv)
+
+    })
+})
