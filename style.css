@@ -1,7 +1,7 @@
 .logo{
     font-family: 'VT323', monospace;
-    height:100%;
-}
+    height:100%;}
+   
 html{
     background-color:#FEF9FF;
     height:100%;
@@ -10,17 +10,17 @@ html{
 ::placeholder{
     color:black;
 }
-/* .bg{
-    background-image:url("assets/radiocity.png");
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    opacity: .8;
+
+h1{
+    color:black;
+    font-weight:bold;
+} 
+#headerBg{
+    background-image: url(assets/musicpattern.jpg);
+    height:100px;
+    width:100%;
+    
 
 }
-h1{
-    color:yellow;
-} */
 
 
