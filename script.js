@@ -35,13 +35,13 @@ $(searchBtnEl).click(function () {
         var pFour = $("<button/>", {
             text: "Click for Bio",
             id: "readBio"
-            
+
         })
         var bioBtnEl = $(pFour);
 
         $(bioBtnEl).click(function () {
             var inputVal = $("#inputInfo").val();
-            event.preventDefault();
+            event.stopPropagation();
             $.ajax({
                 url: "https://www.theaudiodb.com/api/v1/json/1/search.php?s=" + inputVal,
                 method: "GET"

@@ -10,7 +10,7 @@ html{
 ::placeholder{
     color:black;
 }
-.bg{
+/* .bg{
     background-image:url("assets/radiocity.png");
     height: 100%;
     background-position: center;
@@ -21,4 +21,4 @@ html{
 }
 h1{
     color:yellow;
-}
+} */
