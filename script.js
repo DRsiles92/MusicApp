@@ -99,14 +99,12 @@ $(searchBtnEl).click(function () {
     }).then(function (response) {
         console.log(response);
 
-        // var infoDiv = $("<div class='artistInfo'>");
+        var artistPic = response.artists[0].strArtistThumb;
+                console.log(artistPic);
+                console.log()
 
-        // var artInfo = response.artists[0].strBiographyEN;
-        // var pFive = $("<p>").text("Biography: " + artInfo);
-        // infoDiv.append(pFive);
-
-        $("#artist-info").prepend(infoDiv);
-        return;
+        $("#artistResults").prepend($('<img>',{id: 'artistName' ,src: artistPic, width: '30%', height: '30%' }));
+        
 
     })
 })
