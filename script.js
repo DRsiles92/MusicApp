@@ -41,13 +41,13 @@ $(searchBtnEl).click(function () {
         var pFour = $("<button/>", {
             text: "Click for Bio",
             id: "readBio"
-            
+
         })
         var bioBtnEl = $(pFour);
 
         $(bioBtnEl).click(function () {
             var inputVal = $("#inputInfo").val();
-            event.preventDefault();
+            event.stopPropagation();
             $.ajax({
                 url: "https://www.theaudiodb.com/api/v1/json/1/search.php?s=" + inputVal,
                 method: "GET"
@@ -60,7 +60,7 @@ $(searchBtnEl).click(function () {
                 var pFive = $("<p>").text("Biography: " + artInfo);
                 infoDiv.append(pFive);
 
-                $("#artist-info").prepend(infoDiv);
+                $("#artist-info").html(infoDiv);
                 
             })
         })
@@ -71,8 +71,7 @@ $(searchBtnEl).click(function () {
 
 
 
-        $("#artistResults").prepend(songDiv)
-
+        $("#songInfo").html(songDiv)
     })
 }
 });
@@ -98,7 +97,7 @@ $(searchBtnEl).click(function () {
         var pOne = $("<p>").text(lyrics);
         lyricDiv.append(pOne);
 
-        $("#lyricResults").prepend(lyricDiv)
+        $("#lyricResults").html(lyricDiv)
 
     })
 }
@@ -120,7 +119,7 @@ $(searchBtnEl).click(function () {
         var artistPic = response.artists[0].strArtistThumb;
                 console.log(artistPic);
 
-        $("#artistResults").prepend($('<img>',{id: 'artistName' ,src: artistPic, width: '30%', height: '30%' }));
+        $("#artistImage").html($('<img>',{id: 'artistName' ,src: artistPic, width: '30%', height: '30%' }));
         
 
 
