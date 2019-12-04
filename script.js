@@ -55,8 +55,9 @@ $(searchBtnEl).click(function () {
                 infoDiv.append(pFive);
 
                 $("#artist-info").prepend(infoDiv);
-                return;
-
+                
+                $("#inputInfo").val(null);
+            $("#inputInfo1").val(null);
             })
         })
 
@@ -65,7 +66,9 @@ $(searchBtnEl).click(function () {
 
 
         $("#artistResults").prepend(songDiv)
+
     })
+    
 });
 
 
