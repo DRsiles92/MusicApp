@@ -61,11 +61,11 @@ $(searchBtnEl).click(function () {
                 infoDiv.append(pFive);
 
                 $("#artist-info").html(infoDiv);
+                $("#inputInfo").val(null);
+                $("#inputInfo1").val(null);
                 
             })
         })
-        $("#inputInfo").val(null);
-        $("#inputInfo1").val(null);
 
         songDiv.append(pFour);
 
