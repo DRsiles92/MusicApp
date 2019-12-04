@@ -105,7 +105,7 @@ $(searchBtnEl).click(function () {
                 console.log(artistPic);
                 console.log()
 
-        $("#artistImage").html($('<img>',{id: 'artistName' ,src: artistPic, width: '30%', height: '30%' }));
+        $("#artistImage").html($('<img>',{id: 'artistName' ,src: artistPic, width: '100%', height: '100%' }));
         
 
     })
