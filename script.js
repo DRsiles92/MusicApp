@@ -105,7 +105,8 @@ $(searchBtnEl).click(function () {
 
 $(searchBtnEl).click(function () {
     var inputVal = $("#inputInfo").val();
-    if (!inputVal){
+    var inputVal1 = $("#inputInfo1").val();
+    if (!inputVal || !inputVal1){
         return;
         console.log('input is null')
     }else{
