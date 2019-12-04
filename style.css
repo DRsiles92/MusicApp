@@ -12,9 +12,13 @@ html{
 }
 
 h1{
-    color:yellow;
+    color:black;
+    font-weight:bold;
 } 
 #headerBg{
+    background-image: url(assets/musicpattern.jpg);
+    height:100px;
+    width:100%;
     
 
 }
