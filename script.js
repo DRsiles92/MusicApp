@@ -4,7 +4,13 @@ var searchBtnEl = $("#searchBtn");
 
 $(searchBtnEl).click(function () {
     var inputVal = $("#inputInfo").val();
+    console.log(!inputVal);
     var inputVal1 = $("#inputInfo1").val();
+    
+    if (!inputVal || !inputVal1){
+        return;
+        console.log('input is null')
+    }else{
     event.preventDefault();
     $.ajax({
         url: "https://www.theaudiodb.com/api/v1/json/1/searchtrack.php?s=" + inputVal + "&t=" + inputVal1,
@@ -56,10 +62,10 @@ $(searchBtnEl).click(function () {
 
                 $("#artist-info").html(infoDiv);
                 
-                $("#inputInfo").val(null);
-            $("#inputInfo1").val(null);
             })
         })
+        $("#inputInfo").val(null);
+        $("#inputInfo1").val(null);
 
         songDiv.append(pFour);
 
@@ -67,13 +73,17 @@ $(searchBtnEl).click(function () {
 
         $("#songInfo").html(songDiv)
     })
-    
+}
 });
 
 
 $(searchBtnEl).click(function () {
     var inputVal = $("#inputInfo").val();
     var inputVal1 = $("#inputInfo1").val();
+    if (!inputVal || !inputVal1){
+        return;
+        console.log('input is null')
+    }else{
     event.preventDefault();
     $.ajax({
         url: "https://api.lyrics.ovh/v1/" + inputVal + "/" + inputVal1,
@@ -90,10 +100,16 @@ $(searchBtnEl).click(function () {
         $("#lyricResults").html(lyricDiv)
 
     })
+}
 });
 
 $(searchBtnEl).click(function () {
     var inputVal = $("#inputInfo").val();
+    var inputVal1 = $("#inputInfo1").val();
+    if (!inputVal || !inputVal1){
+        return;
+        console.log('input is null')
+    }else{
     event.preventDefault();
     $.ajax({
         url: "https://www.theaudiodb.com/api/v1/json/1/search.php?s=" + inputVal,
@@ -103,12 +119,13 @@ $(searchBtnEl).click(function () {
 
         var artistPic = response.artists[0].strArtistThumb;
                 console.log(artistPic);
-                console.log()
 
         $("#artistImage").html($('<img>',{id: 'artistName' ,src: artistPic, width: '100%', height: '100%' }));
         
 
+
     })
+}
 })
 
 
