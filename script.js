@@ -54,7 +54,7 @@ $(searchBtnEl).click(function () {
                 var pFive = $("<p>").text("Biography: " + artInfo);
                 infoDiv.append(pFive);
 
-                $("#artist-info").prepend(infoDiv);
+                $("#artist-info").html(infoDiv);
                 return;
 
             })
@@ -64,7 +64,7 @@ $(searchBtnEl).click(function () {
 
 
 
-        $("#artistResults").prepend(songDiv)
+        $("#artistResults").html(songDiv)
     })
 });
 
@@ -85,7 +85,7 @@ $(searchBtnEl).click(function () {
         var pOne = $("<p>").text(lyrics);
         lyricDiv.append(pOne);
 
-        $("#lyricResults").prepend(lyricDiv)
+        $("#lyricResults").html(lyricDiv)
 
     })
 });
