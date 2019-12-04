@@ -55,8 +55,9 @@ $(searchBtnEl).click(function () {
                 infoDiv.append(pFive);
 
                 $("#artist-info").html(infoDiv);
-                return;
-
+                
+                $("#inputInfo").val(null);
+            $("#inputInfo1").val(null);
             })
         })
 
@@ -64,8 +65,9 @@ $(searchBtnEl).click(function () {
 
 
 
-        $("#artistResults").html(songDiv)
+        $("#songInfo").html(songDiv)
     })
+    
 });
 
 
@@ -103,7 +105,7 @@ $(searchBtnEl).click(function () {
                 console.log(artistPic);
                 console.log()
 
-        $("#artistResults").prepend($('<img>',{id: 'artistName' ,src: artistPic, width: '30%', height: '30%' }));
+        $("#artistImage").prepend($('<img>',{id: 'artistName' ,src: artistPic, width: '30%', height: '30%' }));
         
 
     })
