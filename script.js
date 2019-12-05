@@ -129,15 +129,15 @@ $(searchBtnEl).click(function () {
 })
 
 
-{/* <script>
-	$(document).ready(function(){
-		$('#btnClear').click(function(){				
-			if(confirm("Want to clear?")){
-				/*Clear all input type="text" box*/
-				$('#form1 input[type="text"]').val('');
-				/*Clear textarea using id */
-				$('#form1 #txtAddress').val('');
-			}					
-		});
-	});
-</script> */}
+// {/* <script>
+// 	$(document).ready(function(){
+// 		$('#btnClear').click(function(){				
+// 			if(confirm("Want to clear?")){
+// 				/*Clear all input type="text" box*/
+// 				$('#form1 input[type="text"]').val('');
+// 				/*Clear textarea using id */
+// 				$('#form1 #txtAddress').val('');
+// 			}					
+// 		});
+// 	});
+// </script> */}
