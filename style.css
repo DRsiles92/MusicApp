@@ -19,8 +19,15 @@ h1{
     background-image: url(assets/musicpattern.jpg);
     height:100px;
     width:100%;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:0px;
+    margin-bottom:0px;
+    text-align:center;
     
+    padding:0px;
 
 }
+
 
 
