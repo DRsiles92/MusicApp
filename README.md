@@ -29,3 +29,9 @@ Group project one.
 <p>If you would like to see the biography of the artist, the screenshot below will show you what to expect once the "Click for Bio" button is clicked</p>
 
 ![Screenshot](assets/Screenshot_3.png)
+
+
+
+<p> Below will be a screenshot of the mobile version view</p>
+
+![Screenshot](assets/Screenshot_4.png)
