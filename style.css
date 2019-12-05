@@ -1,6 +1,8 @@
 .logo{
     font-family: 'VT323', monospace;
-    height:100%;}
+    height:100%;
+    margin-top:0px;
+}
    
 html{
     background-color:#FEF9FF;
