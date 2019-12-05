@@ -11,68 +11,71 @@ $(searchBtnEl).click(function () {
         return;
         console.log('input is null')
     }else{
-    event.preventDefault();
-    $.ajax({
-        url: "https://www.theaudiodb.com/api/v1/json/1/searchtrack.php?s=" + inputVal + "&t=" + inputVal1,
-        method: "GET"
-    }).then(function (response) {
-        console.log(response);
-        console.log(response.track[0].strArtist);
-        console.log(response.track[0].strAlbum);
-        console.log(response.track[0].strTrack);
-
-
-
-        var songDiv = $("<div class='artist'>");
-
-        var artist = response.track[0].strArtist;
-        var pOne = $("<p>").text("Artist: " + artist);
-        songDiv.append(pOne);
-
-        var album = response.track[0].strAlbum;
-        var pTwo = $("<p>").text("Album: " + album);
-        songDiv.append(pTwo);
-
-        var track = response.track[0].strTrack;
-        var pThree = $("<p>").text("Song Title: " + track);
-        songDiv.append(pThree);
-
-
-        var pFour = $("<button/>", {
-            text: "Click for Bio",
-            id: "readBio"
-
-        })
-        var bioBtnEl = $(pFour);
-
-        $(bioBtnEl).click(function () {
-            var inputVal = $("#inputInfo").val();
-            event.stopPropagation();
-            $.ajax({
-                url: "https://www.theaudiodb.com/api/v1/json/1/search.php?s=" + inputVal,
-                method: "GET"
-            }).then(function (response) {
-                console.log(response);
-
-                var infoDiv = $("<div class='artistInfo'>");
-
-                var artInfo = response.artists[0].strBiographyEN;
-                var pFive = $("<p>").text("Biography: " + artInfo);
-                infoDiv.append(pFive);
-
-                $("#artist-info").html(infoDiv);
-                
+        event.preventDefault();
+        $.ajax({
+            url: "https://www.theaudiodb.com/api/v1/json/1/searchtrack.php?s=" + inputVal + "&t=" + inputVal1,
+            method: "GET"
+        }).then(function (response) {
+            console.log(response);
+            console.log(response.track[0].strArtist);
+            console.log(response.track[0].strAlbum);
+            console.log(response.track[0].strTrack);
+            
+            
+            
+            var songDiv = $("<div class='artist'>");
+            
+            var artist = response.track[0].strArtist;
+            var pOne = $("<p>").text("Artist: " + artist);
+            songDiv.append(pOne);
+            
+            var album = response.track[0].strAlbum;
+            var pTwo = $("<p>").text("Album: " + album);
+            songDiv.append(pTwo);
+            
+            var track = response.track[0].strTrack;
+            var pThree = $("<p>").text("Song Title: " + track);
+            songDiv.append(pThree);
+            
+            
+            var pFour = $("<button/>", {
+                text: "Click for Bio",
+                id: "readBio"
                 
             })
+            var bioBtnEl = $(pFour);
+            
+            $(bioBtnEl).click(function () {
+                $(".artistInfo").show();
+                var inputVal = $("#inputInfo").val();
+                event.stopPropagation();
+                $.ajax({
+                    url: "https://www.theaudiodb.com/api/v1/json/1/search.php?s=" + inputVal,
+                    method: "GET"
+                }).then(function (response) {
+                    console.log(response);
+                    
+                    var infoDiv = $("<div class='artistInfo'>");
+                    
+                    var artInfo = response.artists[0].strBiographyEN;
+                    var pFive = $("<p>").text("Biography: " + artInfo);
+                    infoDiv.append(pFive);
+                    
+                    $("#artist-info").html(infoDiv);
+                    
+                    
+                })
+            })
+            
+            songDiv.append(pFour);
+            
+            
+            
+            $("#songInfo").html(songDiv)
         })
-
-        songDiv.append(pFour);
-
-
-
-        $("#songInfo").html(songDiv)
-    })
-}
+    }
+    $("#artistResults").show();
+    $("#lyricResults").show();
 });
 
 
@@ -127,11 +130,12 @@ $(searchBtnEl).click(function () {
 }
 })
 
-
-
 	$(document).ready(function(){
 		$('#clearBtn').click(function(){				
 			$("#inputInfo").val(null);
             $("#inputInfo1").val(null);
+            $("#artistResults").hide(); //clear results
+            $("#lyricResults").hide(); //clear lyrics
+            $(".artistInfo").hide();
 		});
 	});
