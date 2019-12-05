@@ -18,9 +18,13 @@ Group project one.
 
 ![Screenshot](assets/Screenshot1.png)
 
+
+
 <p>Below is a screenshot of what you would typically see once you search for a song.</p>
 
 ![Screenshot](assets/Screenshot2.png)
+
+
 
 <p>If you would like to see the biography of the artist, the screenshot below will show you what to expect once the "Click for Bio" button is clicked</p>
 
