@@ -61,8 +61,7 @@ $(searchBtnEl).click(function () {
                 infoDiv.append(pFive);
 
                 $("#artist-info").html(infoDiv);
-                $("#inputInfo").val(null);
-                $("#inputInfo1").val(null);
+                
                 
             })
         })
@@ -129,15 +128,10 @@ $(searchBtnEl).click(function () {
 })
 
 
-{/* <script>
+
 	$(document).ready(function(){
-		$('#btnClear').click(function(){				
-			if(confirm("Want to clear?")){
-				/*Clear all input type="text" box*/
-				$('#form1 input[type="text"]').val('');
-				/*Clear textarea using id */
-				$('#form1 #txtAddress').val('');
-			}					
+		$('#clearBtn').click(function(){				
+			$("#inputInfo").val(null);
+            $("#inputInfo1").val(null);
 		});
 	});
-</script> */}
