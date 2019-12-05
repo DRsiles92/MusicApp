@@ -13,7 +13,8 @@ html{
 
 h1{
     color:black;
-    font-weight:bold;
+    font-weight:bolder;
+    font-size: 75px;
 } 
 #headerBg{
     background-image: url(assets/musicpattern.jpg);
